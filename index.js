@@ -15,11 +15,12 @@ const omikuji = [
 const randRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
 const startUp = () => {
+  underTitle.classList.add('hidden');
+  startOmikuji.classList.add('hidden');
+  preOmikuji.classList.remove('hidden');
+  preOmikuji.classList.add('pre_omikuji');
+  
   return new Promise((resolve, reject) => {
-    underTitle.classList.add('hidden');
-    startOmikuji.classList.add('hidden');
-    preOmikuji.classList.remove('hidden');
-    preOmikuji.classList.add('pre_omikuji');
     setTimeout(() => {
       preOmikuji.classList.add('hidden');
       resolve();
