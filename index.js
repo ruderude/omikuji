@@ -1,13 +1,6 @@
 // 連打で画面が拡大縮小するのを防止
 document.addEventListener("dblclick", function (e) { e.preventDefault(); }, { passive: false });
 
-
-const main = document.getElementById('main');
-const start_omikuji = document.getElementById('start_omikuji');
-const pre_omikuji = document.getElementById('pre_omikuji');
-const under_title = document.getElementById('under_title');
-
-
 const omikuji = [
   "./img/omikuji_daikyou-min.png",
   "./img/omikuji_kyou-min.png",
@@ -23,12 +16,12 @@ const randRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min
 
 const startUp = () => {
   return new Promise((resolve, reject) => {
-    under_title.classList.add('hidden');
-    start_omikuji.classList.add('hidden');
-    pre_omikuji.classList.remove('hidden');
-    pre_omikuji.classList.add('pre_omikuji');
+    underTitle.classList.add('hidden');
+    startOmikuji.classList.add('hidden');
+    preOmikuji.classList.remove('hidden');
+    preOmikuji.classList.add('pre_omikuji');
     setTimeout(() => {
-      pre_omikuji.classList.add('hidden');
+      preOmikuji.classList.add('hidden');
       resolve();
     },3000);
   });
@@ -36,11 +29,11 @@ const startUp = () => {
 
 const choiceOmikuji = () => {
   const num = randRange(0, omikuji.length-1);
-  const omikuji_img = document.createElement('img');
-  omikuji_img.setAttribute('src', omikuji[num]);
-  omikuji_img.classList.add('omikuji_result');
-  main.appendChild(omikuji_img);
-  omikuji_img.classList.add('fadein');
+  const omikujiImg = document.createElement('img');
+  omikujiImg.setAttribute('src', omikuji[num]);
+  omikujiImg.classList.add('omikuji_result');
+  main.appendChild(omikujiImg);
+  omikujiImg.classList.add('fadein');
 }
 
 const omikujiStart = async () => {
@@ -48,8 +41,13 @@ const omikujiStart = async () => {
   choiceOmikuji();
 }
 
+const main = document.getElementById('main');
+const startOmikuji = document.getElementById('start_omikuji');
+const preOmikuji = document.getElementById('pre_omikuji');
+const underTitle = document.getElementById('under_title');
 
-start_omikuji.addEventListener('click', function() {
+// クリックイベント
+startOmikuji.addEventListener('click', function() {
   omikujiStart();
 });
 
