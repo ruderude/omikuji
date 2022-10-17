@@ -83,7 +83,7 @@ body {
 .omikuji_result {
   width: 300px;
   margin: auto;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 
 /* @keyframes fadein {
@@ -116,3 +116,35 @@ body {
   }
 }
 
+.reset_btn {
+  margin: auto;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 20px;
+  width: 200px;
+  height: 40px;
+  font-weight: bold;
+  border-bottom: 5px solid #2a3fc5;
+  transition: 0.3s;
+  background-color: #5467eb;
+}
+
+.reset_btn:hover {
+  border-bottom-width: 0;
+  transform: translateY(5px);
+}
+
+.twitter_area {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.twitter_img {
+  width: 150px;
+}
